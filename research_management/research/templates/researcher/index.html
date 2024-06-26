@@ -1,0 +1,23 @@
+{% extends 'researcher/base.html' %}
+{% block content %}
+
+<h1>Liste des chercheurs</h1>
+<form method="get" action="{% url 'chercheur-list' %}">
+    <input type="text" name="search" placeholder="Search by nom or specialite" value="{{ request.GET.search }}">
+    <button type="submit">Search</button>
+</form>
+<a href="{% url 'chercheur-list-create' %}">Créé une chercheur</a>
+<ul>
+    {% for chercheur in chercheurs %}
+    <li><a  href="{% url 'chercheur-detail' chercheur.id %}">{{chercheur.nom}}</a>
+        <a  href="{% url 'chercheur-update' chercheur.id %}">update</a>
+        <form action="{% url 'chercheur-delete' pk=chercheur.pk %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+   
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'publication/base.html' %}
+{% block content %}
+
+<h1>Liste des publications</h1>
+<form method="get" action="{% url 'publication-list' %}">
+    <input type="text" name="search" placeholder="Search by titre" value="{{ request.GET.search }}">
+    <button type="submit">Search</button>
+</form>
+<a href="{% url 'publication-list-create' %}">Créé une publication</a>
+<ul>
+    {% for publication in publications %}
+    <li><a  href="{% url 'publication-detail' publication.id %}">{{publication.titre}}</a>
+        <a  href="{% url 'publication-update' publication.id %}">update</a>
+        <form action="{% url 'publication-delete' pk=publication.pk %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+   
+    {% endfor %}
+</ul>
+
+{% endblock %}

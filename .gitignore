@@ -1,0 +1,21 @@
+# Ignore virtual environment directories
+myenv/
+.myenv/
+env/
+.env/
+
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
+
+# Python #
+#########
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.installed.cfg
+*.egg
+local_settings.py
+db.sqlite3
+db.sqlite3-journal

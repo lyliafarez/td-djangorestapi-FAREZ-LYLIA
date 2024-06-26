@@ -1,0 +1,20 @@
+<!-- chercheur_detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chercheur Details</title>
+</head>
+<body>
+    <h2>Chercheur Details</h2>
+    <p><strong>Nom:</strong> {{ chercheur.nom }}</p>
+    <p><strong>Specialite:</strong> {{ chercheur.specialite }}</p>
+    <h3>Projects:</h3>
+    <ul>
+        {% for project in chercheur.projects %}
+            <li>{{ project.titre }} - {{ project.description }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- chercheur_update.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update projet</title>
+</head>
+<body>
+    <h2>Update projet</h2>
+    <form method="post" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update projet</button>
+    </form>
+</body>
+</html>

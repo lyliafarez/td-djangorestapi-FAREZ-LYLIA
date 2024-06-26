@@ -1,0 +1,23 @@
+{% extends 'project/base.html' %}
+{% block content %}
+
+<h1>Liste des projets</h1>
+<form method="get" action="{% url 'projet-list' %}">
+    <input type="text" name="search" placeholder="Search by titre" value="{{ search }}">
+    <button type="submit">Search</button>
+</form>
+<a href="{% url 'projet-list-create' %}">Créé un projet</a>
+<ul>
+    {% for projet in projets %}
+    <li><a  href="{% url 'projet-detail' projet.id %}">{{projet.titre}}</a>
+        <a  href="{% url 'projet-update' projet.id %}">update</a>
+        <form action="{% url 'projet-delete' pk=projet.pk %}" method="post" style="display: inline;">
+            {% csrf_token %}
+            <input type="submit" value="Delete">
+        </form>
+    </li>
+   
+    {% endfor %}
+</ul>
+
+{% endblock %}

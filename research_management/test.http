@@ -1,0 +1,154 @@
+
+# Get researchers list
+GET http://localhost:8000/chercheurs
+
+###
+# Get researcher by id
+
+GET http://localhost:8000/chercheurs/1
+
+###
+# Create a researcher
+POST  http://localhost:8000/chercheurs/
+Content-Type: application/json
+
+{
+    "nom" : "Jhon Doe",
+    "specialite": "CS - Math"
+    
+}
+
+###
+# update a researcher
+
+PUT http://localhost:8000/chercheurs/1/
+Content-Type: application/json
+
+{
+    "nom" : "Farez Lylia",
+    "specialite": "CS - Info"
+    
+}
+
+###
+# update a researcher partially
+
+PATCH http://localhost:8000/chercheurs/1/
+Content-Type: application/json
+
+{
+    "nom" : "Mm Farez Lylia"
+    
+}
+
+###
+# delete a researcher
+DELETE http://localhost:8000/chercheurs/3/
+
+###
+# GET  projects list
+GET http://localhost:8000/projets
+
+###
+# Get project by id
+
+GET http://localhost:8000/projets/1
+
+###
+# Create a project
+POST  http://localhost:8000/projets/
+Content-Type: application/json
+
+{
+    "titre" : "Computer science",
+    "description": "None",
+    "date_debut":"2024-09-02",
+    "date_fin_prevue":"2024-09-03",
+    "chef_de_projet":1
+    
+}
+
+###
+# update a project
+PUT  http://localhost:8000/projets/1/
+Content-Type: application/json
+
+{
+    "titre" : "Computer science",
+    "description": "None",
+    "date_debut":"2024-09-02",
+    "date_fin_prevue":"2024-09-03",
+    "chef_de_projet":2
+    
+}
+
+
+###
+# update a project partially
+
+PATCH http://localhost:8000/projets/1/
+Content-Type: application/json
+
+{
+     "titre" : "Data science"
+    
+}
+
+###
+# delete a project
+DELETE http://localhost:8000/projets/2/
+
+
+
+
+###
+# GET  publications list
+GET http://localhost:8000/publications
+###
+# Get publication by id
+GET http://localhost:8000/publications/1
+
+###
+# Create a publication
+POST  http://localhost:8000/publications/
+Content-Type: application/json
+
+{
+    "titre" : "Computer science pub2",
+    "resume": "None",
+    "projet_associe":1,
+    "date_publication":"2024-09-04"
+    
+    
+}
+
+###
+# update a project
+PUT  http://localhost:8000/publications/1/
+Content-Type: application/json
+
+{
+    "titre" : "Computer science pub",
+    "resume": "resume",
+    "projet_associe":2,
+    "date_publication":"2024-09-05"
+    
+    
+}
+
+
+###
+# update a project partially
+
+PATCH http://localhost:8000/publications/1/
+Content-Type: application/json
+
+{
+    "resume": "resume complet"
+    
+}
+###
+# delete a publication
+DELETE http://localhost:8000/publications/3/
+
+

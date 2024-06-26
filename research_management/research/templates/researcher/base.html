@@ -1,0 +1,28 @@
+
+<html>
+  <head>
+    <title>Research manager</title>
+ 
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="{% url 'chercheur-list' %}">Liste des chercheurs</a></li>
+            <li><a href="{% url 'projet-list' %}">Liste des projets</a></li>
+            <li><a href="{% url 'publication-list' %}">Liste des publications</a></li>
+            <li><a href="{% url 'schema-swagger-ui' %}">API Documentation (Swagger)</a></li>
+            <li><a href="{% url 'schema-redoc' %}">API Documentation (ReDoc)</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+      <p>&copy; 2024 Research Manager</p>
+    </footer>
+  </body>
+</html>

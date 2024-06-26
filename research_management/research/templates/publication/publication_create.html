@@ -1,0 +1,17 @@
+<!-- templates/researcher/projet_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create publication</title>
+</head>
+<body>
+    <h2>Create publication</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Publication</button>
+    </form>
+</body>
+</html>

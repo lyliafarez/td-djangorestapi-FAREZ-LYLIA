@@ -1,0 +1,17 @@
+<!-- templates/researcher/projet_form.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Projet De Recherche</title>
+</head>
+<body>
+    <h2>Create Projet De Recherche</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Projet</button>
+    </form>
+</body>
+</html>
